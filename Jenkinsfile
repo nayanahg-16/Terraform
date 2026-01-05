@@ -15,7 +15,7 @@ pipeline{
             steps{
                 script{
                     dir("terraform"){
-                        git url: 'https://github.com/nayanahg-16/Terraform.git',branch: 'main'
+                        git url: 'https://github.com/nayanahg-16/Terraform.git',branch: 'dev'
                     }
                 }
             }
