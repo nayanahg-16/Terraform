@@ -23,16 +23,16 @@ pipeline{
 
         stage('Plan'){
             steps{
-                sh 'pwd; cd eks/; terraform init'
-                sh 'pwd; cd eks/; terraform plan -out tfplan'
-                sh 'pwd; cd eks/; terraform show -no-color tfplan > tfplan.txt'
+                sh 'terraform init'
+                sh 'terraform plan -out tfplan'
+                sh 'terraform show -no-color tfplan > tfplan.txt'
             }
         }
 
         stage('Approval'){
             steps{
                 script{
-                    def plan = readFile 'eks/tfplan.txt'
+                    def plan = readFile 'tfplan.txt'
                     input message: "Do you want to proceed with the Terraform action?",
                     parameters: [text(name: 'Plan', description: 'Please review the plan', defaultValue: plan)]
                 }
