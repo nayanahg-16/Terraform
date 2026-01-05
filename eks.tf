@@ -173,7 +173,7 @@ resource "aws_iam_role_policy_attachment" "node_registry_policy" {
 variable "ssh_key_name" {
   description = "use your own ssh keypair"
   type = string
-  default = "Project-genAI"
+  default = "nayana"
 }
 
 ############################
