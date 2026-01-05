@@ -48,10 +48,10 @@ pipeline{
             steps{
                 script{
                     if (params.terraformAction == 'apply'){
-                        sh 'pwd; cd eks/; terraform apply -input=false tfplan'
+                        sh 'pwd; terraform apply -input=false tfplan'
                     }
                     else if (params.terraformAction == 'destroy'){
-                        sh 'pwd; cd eks/; terraform destroy -auto-approve'
+                        sh 'pwd; terraform destroy -auto-approve'
                     }
                 }
             }
