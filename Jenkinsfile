@@ -15,7 +15,7 @@ pipeline{
             steps{
                 script{
                     dir("terraform"){
-                        git url: 'https://github.com/ManojKRISHNAPPA/Itkannadigaru-chatbot.git',branch: 'Iac-devenv'
+                        git url: 'https://github.com/nayanahg-16/Terraform.git',branch: 'main'
                     }
                 }
             }
